@@ -1,5 +1,5 @@
-@use "./variables.scss";
 @use "./mixin.scss";
+
 @font-face {
   font-family: "urbanist-bold";
   src: url(../fonts/Urbanist-Bold.ttf);
@@ -12,6 +12,11 @@
   font-family: "urbanist-black";
   src: url(../fonts/Urbanist-Black.ttf);
 }
+
+$accentColor-green: #a9cba6;
+$accentColor-beige: #f0cea0;
+$accentColor-blue: #a1d9d6;
+
 * {
   padding: 0;
   margin: 0;
@@ -21,26 +26,27 @@ html {
   font-size: 62.5%;
   font-family: "urbanist-regular", sans-serif;
 }
-
 body {
   max-width: 1440px;
   margin: 0 auto;
   @include mixin.fontStyle(400, 1.6rem, 120%);
 }
-a {
-  text-decoration: none;
-}
 h2 {
   @include mixin.fontStyle(400, 4rem, 120%);
   font-family: "urbanist-black";
 }
+a {
+  text-decoration: none;
+}
+
 .flex {
   display: flex;
   align-items: center;
 }
+// !-----------------header-----------------
 header {
   padding: 1.6rem 16rem;
-  div {
+  .header-border {
     padding: 0.8rem;
     border: 1px solid #000;
     border-radius: 4.5rem;
@@ -63,6 +69,7 @@ header {
     }
   }
 }
+// !-----------------main-----------------
 main {
   .btn {
     @extend .flex;
@@ -70,8 +77,10 @@ main {
     @include mixin.btnStyle(#fff, #000);
   }
   .btn-green {
-    @include mixin.btnStyle(variables.$accentColor-green, #fff);
+    @include mixin.btnStyle($accentColor-green, #fff);
   }
+
+  //?-----------------Section Hero-----------------
   .stn-hero {
     padding: 0 10rem;
     background: url("../img/Ilustration_Header.png") no-repeat;
@@ -79,7 +88,6 @@ main {
     background-position: center top;
     margin: 1.2rem auto;
 
-    border: 1px solid red;
     h1 {
       @include mixin.fontStyle(400, 11.8rem, 80%);
       font-family: "urbanist-black";
@@ -95,6 +103,7 @@ main {
       justify-content: center;
     }
   }
+  //?-----------------Section Info Cards, Car Cards-----------------
   .stn-infoCards,
   .stn-carCards {
     padding: 6.4rem 10rem;
@@ -109,12 +118,11 @@ main {
       text-align: center;
     }
   }
+  //?-----------------Section Info Cards-----------------
   .stn-infoCards {
     background: url("../img/bulb_info.png") no-repeat center;
-    background-size: auto 70%;
+    background-size: auto 60%;
     background-position: left;
-
-    border: 1px solid blue;
 
     .infoCards-wrapper {
       margin: 6.4rem auto;
@@ -142,11 +150,85 @@ main {
       padding-right: 7.8rem;
     }
   }
-  .stn-carCards {
-    background: url("../img/bulb_info.png") no-repeat center;
-    background-size: auto 70%;
-    background-position: left;
 
-    border: 1px solid green;
+  //?-----------------Section Car Cards-----------------
+  .stn-carCards {
+    background: url("../img/bulb_carCard.png") no-repeat center;
+    background-size: 100%;
+    background-position: center top;
+
+    .carCards-wrapper {
+      @extend .flex;
+      flex-wrap: wrap;
+      gap: 4rem;
+      margin-top: 6.4rem;
+      margin-bottom: 9.7rem;
+    }
+    .carCard {
+      @include mixin.cardStyle(5rem, 0, 35.3rem, 54.5rem);
+      background-color: #fff;
+      justify-content: space-between;
+
+      .img-carCard {
+        width: 100%;
+      }
+      .carCard-textbox {
+        border-top: 1px solid #000;
+        background-color: $accentColor-beige;
+        padding: 1.4rem 2.4rem 1.4rem 3.4rem;
+        @extend .flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        border-radius: 0 0 5rem 5rem;
+        border: 1px solid #000;
+        box-shadow: rgba(0, 0, 0, 0.285) -4px -4px 4px inset;
+      }
+      .btn {
+        justify-content: center;
+      }
+
+      .carCard-textbox-sub {
+        @extend .flex;
+        justify-content: space-between;
+        width: 100%;
+        span {
+          @include mixin.fontStyle(bold, 2rem, 150%);
+        }
+      }
+      article {
+        @extend .flex;
+        gap: 0.7rem;
+        align-self: flex-start;
+      }
+    }
+  }
+}
+// !-----------------footer-----------------
+footer {
+  border-top: 2px solid #000;
+  @extend .flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2.4rem;
+
+  nav {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    @extend .flex;
+    gap: 5.5rem;
+  }
+
+  .logo_footer {
+    margin-top: 2.4rem;
+  }
+  .iconbox-social {
+    @extend .flex;
+    gap: 2.4rem;
+  }
+  .link-box {
+    @extend .flex;
+    margin-bottom: 2.4rem;
+    font-size: 1rem;
+    gap: 1rem;
   }
 }

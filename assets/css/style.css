@@ -29,10 +29,6 @@ body {
   line-height: 120%;
 }
 
-a {
-  text-decoration: none;
-}
-
 h2 {
   font-weight: 400;
   font-size: 4rem;
@@ -40,8 +36,12 @@ h2 {
   font-family: "urbanist-black";
 }
 
-.flex, main .stn-infoCards .infoCards-wrapper, main .stn-infoCards,
-main .stn-carCards, main .stn-hero .btn-wrapper, main .btn, header nav, header div {
+a {
+  text-decoration: none;
+}
+
+.flex, footer .link-box, footer .iconbox-social, footer nav, footer, main .stn-carCards .carCard article, main .stn-carCards .carCard .carCard-textbox-sub, main .stn-carCards .carCard .carCard-textbox, main .stn-carCards .carCards-wrapper, main .stn-infoCards .infoCards-wrapper, main .stn-infoCards,
+main .stn-carCards, main .stn-hero .btn-wrapper, main .btn, header nav, header .header-border {
   display: flex;
   align-items: center;
 }
@@ -49,7 +49,7 @@ main .stn-carCards, main .stn-hero .btn-wrapper, main .btn, header nav, header d
 header {
   padding: 1.6rem 16rem;
 }
-header div {
+header .header-border {
   padding: 0.8rem;
   border: 1px solid #000;
   border-radius: 4.5rem;
@@ -99,7 +99,6 @@ main .stn-hero {
   background-size: contain;
   background-position: center top;
   margin: 1.2rem auto;
-  border: 1px solid red;
 }
 main .stn-hero h1 {
   font-weight: 400;
@@ -133,9 +132,8 @@ main .stn-carCards .headline-p {
 }
 main .stn-infoCards {
   background: url("../img/bulb_info.png") no-repeat center;
-  background-size: auto 70%;
+  background-size: auto 60%;
   background-position: left;
-  border: 1px solid blue;
 }
 main .stn-infoCards .infoCards-wrapper {
   margin: 6.4rem auto;
@@ -171,10 +169,80 @@ main .stn-infoCards .btn {
   padding-right: 7.8rem;
 }
 main .stn-carCards {
-  background: url("../img/bulb_info.png") no-repeat center;
-  background-size: auto 70%;
-  background-position: left;
-  border: 1px solid green;
+  background: url("../img/bulb_carCard.png") no-repeat center;
+  background-size: 100%;
+  background-position: center top;
+}
+main .stn-carCards .carCards-wrapper {
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-top: 6.4rem;
+  margin-bottom: 9.7rem;
+}
+main .stn-carCards .carCard {
+  border-radius: 5rem;
+  border: 1px solid #000;
+  box-shadow: rgba(0, 0, 0, 0.285) -4px -4px 4px inset;
+  padding: 0;
+  width: 35.3rem;
+  height: 54.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  justify-content: space-between;
+}
+main .stn-carCards .carCard .img-carCard {
+  width: 100%;
+}
+main .stn-carCards .carCard .carCard-textbox {
+  border-top: 1px solid #000;
+  background-color: #f0cea0;
+  padding: 1.4rem 2.4rem 1.4rem 3.4rem;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-radius: 0 0 5rem 5rem;
+  border: 1px solid #000;
+  box-shadow: rgba(0, 0, 0, 0.285) -4px -4px 4px inset;
+}
+main .stn-carCards .carCard .btn {
+  justify-content: center;
+}
+main .stn-carCards .carCard .carCard-textbox-sub {
+  justify-content: space-between;
+  width: 100%;
+}
+main .stn-carCards .carCard .carCard-textbox-sub span {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 150%;
+}
+main .stn-carCards .carCard article {
+  gap: 0.7rem;
+  align-self: flex-start;
+}
+
+footer {
+  border-top: 2px solid #000;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2.4rem;
+}
+footer nav {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  gap: 5.5rem;
+}
+footer .logo_footer {
+  margin-top: 2.4rem;
+}
+footer .iconbox-social {
+  gap: 2.4rem;
+}
+footer .link-box {
+  margin-bottom: 2.4rem;
+  font-size: 1rem;
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
