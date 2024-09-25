@@ -6,6 +6,10 @@
   font-family: "urbanist-regular";
   src: url(../fonts/Urbanist-Regular.ttf);
 }
+@font-face {
+  font-family: "urbanist-black";
+  src: url(../fonts/Urbanist-Black.ttf);
+}
 * {
   padding: 0;
   margin: 0;
@@ -30,12 +34,14 @@ a {
 }
 
 h2 {
-  font-weight: 900;
+  font-weight: 400;
   font-size: 4rem;
   line-height: 120%;
+  font-family: "urbanist-black";
 }
 
-.flex, main .stn-infoCards .infoCards-wrapper, main .stn-infoCards, main .stn-hero .btn-wrapper, main .btn, header nav, header div {
+.flex, main .stn-infoCards .infoCards-wrapper, main .stn-infoCards,
+main .stn-carCards, main .stn-hero .btn-wrapper, main .btn, header nav, header div {
   display: flex;
   align-items: center;
 }
@@ -60,7 +66,7 @@ header nav a {
   text-transform: uppercase;
 }
 header nav a:nth-of-type(1) {
-  font-weight: bold;
+  font-family: "urbanist-black";
   border-bottom: 1px solid #000;
 }
 
@@ -89,59 +95,86 @@ main .btn-green {
 }
 main .stn-hero {
   padding: 0 10rem;
-  background: url("../img/Ilustration_Header.png") no-repeat center;
+  background: url("../img/Ilustration_Header.png") no-repeat;
   background-size: contain;
-  background-position: top center;
+  background-position: center top;
   margin: 1.2rem auto;
-  height: 43vh;
   border: 1px solid red;
 }
 main .stn-hero h1 {
-  font-weight: 900;
-  font-size: 9.9rem;
+  font-weight: 400;
+  font-size: 11.8rem;
   line-height: 80%;
-  padding-left: 25.6rem;
-  padding-top: 21.2rem;
+  font-family: "urbanist-black";
+  padding-left: 13.6rem;
+  padding-top: 27.2rem;
 }
 main .stn-hero .btn-wrapper {
+  flex-wrap: wrap;
   padding-top: 8.7rem;
+  padding-bottom: 10rem;
   gap: 2rem;
   justify-content: center;
 }
-main .stn-infoCards {
-  background: url("../img/bulb_info.png") no-repeat center;
-  background-size: contain;
-  background-position: top left;
-  margin: 6.4rem auto;
-  padding: 0 10rem;
+main .stn-infoCards,
+main .stn-carCards {
+  padding: 6.4rem 10rem;
   flex-direction: column;
   justify-content: center;
 }
-main .stn-infoCards h2 {
+main .stn-infoCards h2,
+main .stn-carCards h2 {
   margin-bottom: 1.6rem;
 }
-main .stn-infoCards .headline-p {
+main .stn-infoCards .headline-p,
+main .stn-carCards .headline-p {
   width: 60rem;
   text-align: center;
+}
+main .stn-infoCards {
+  background: url("../img/bulb_info.png") no-repeat center;
+  background-size: auto 70%;
+  background-position: left;
+  border: 1px solid blue;
 }
 main .stn-infoCards .infoCards-wrapper {
   margin: 6.4rem auto;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 main .stn-infoCards .infoCards-wrapper .infoCard {
   border-radius: 1.5rem;
   border: 1px solid #000;
   box-shadow: rgba(0, 0, 0, 0.285) -4px -4px 4px inset;
-  padding: 1.6rem 5.1rem 2.3rem 5.1rem;
+  padding: 0 5.1rem;
   width: 23rem;
   height: 28rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: 0.4823529412;
+  background-color: #ffffff7b;
+  text-align: center;
+}
+main .stn-infoCards .infoCards-wrapper .infoCard img {
+  height: 12rem;
+}
+main .stn-infoCards .infoCards-wrapper .infoCard h4 {
+  font-weight: 900;
+  font-size: 1.9rem;
+  line-height: 150%;
+}
+main .stn-infoCards .infoCards-wrapper .infoCard p {
+  padding-top: 1.2rem;
+  margin-bottom: 2.3rem;
 }
 main .stn-infoCards .btn {
   padding-right: 7.8rem;
+}
+main .stn-carCards {
+  background: url("../img/bulb_info.png") no-repeat center;
+  background-size: auto 70%;
+  background-position: left;
+  border: 1px solid green;
 }
 
 /*# sourceMappingURL=style.css.map */
