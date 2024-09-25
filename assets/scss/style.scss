@@ -1,0 +1,115 @@
+@use "./variables.scss";
+@use "./mixin.scss";
+@font-face {
+  font-family: "urbanist-bold";
+  src: url(../fonts/Urbanist-Bold.ttf);
+}
+@font-face {
+  font-family: "urbanist-regular";
+  src: url(../fonts/Urbanist-Regular.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "urbanist-regular", sans-serif;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  @include mixin.fontStyle(400, 1.6rem, 120%);
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  @include mixin.fontStyle(900, 4rem, 120%);
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+header {
+  padding: 1.6rem 16rem;
+  div {
+    padding: 0.8rem;
+    border: 1px solid #000;
+    border-radius: 4.5rem;
+    @extend .flex;
+    justify-content: space-between;
+  }
+  img {
+    width: 5.2rem;
+  }
+  nav {
+    @extend .flex;
+    gap: 4rem;
+    a {
+      color: #000;
+      text-transform: uppercase;
+      &:nth-of-type(1) {
+        font-weight: bold;
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+}
+main {
+  .btn {
+    @extend .flex;
+    justify-content: space-between;
+    @include mixin.btnStyle(#fff, #000);
+  }
+  .btn-green {
+    @include mixin.btnStyle(variables.$accentColor-green, #fff);
+  }
+  .stn-hero {
+    padding: 0 10rem;
+    background: url("../img/Ilustration_Header.png") no-repeat center;
+    background-size: contain;
+    background-position: top center;
+    margin: 1.2rem auto;
+    height: 43vh;
+    border: 1px solid red;
+    h1 {
+      @include mixin.fontStyle(900, 9.9rem, 80%);
+      padding-left: 25.6rem;
+      padding-top: 21.2rem;
+    }
+    .btn-wrapper {
+      @extend .flex;
+      padding-top: 8.7rem;
+      gap: 2rem;
+      justify-content: center;
+    }
+  }
+
+  .stn-infoCards {
+    background: url("../img/bulb_info.png") no-repeat center;
+    background-size: contain;
+    background-position: top left;
+    margin: 6.4rem auto;
+    padding: 0 10rem;
+
+    @extend .flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+      margin-bottom: 1.6rem;
+    }
+    .headline-p {
+      width: 60rem;
+      text-align: center;
+    }
+    .cards-wrapper {
+      margin: 6.4rem auto;
+    }
+    .btn {
+      padding-right: 7.8rem;
+    }
+  }
+}

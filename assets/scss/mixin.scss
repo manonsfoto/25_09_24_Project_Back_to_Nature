@@ -1,0 +1,17 @@
+@mixin fontStyle($fWeight, $fSize, $lHeight) {
+  font-weight: $fWeight;
+  font-size: $fSize;
+  line-height: $lHeight;
+}
+
+@mixin btnStyle($bgColor, $fColor) {
+  background-color: $bgColor;
+  border-radius: 3rem;
+  color: $fColor;
+  font-weight: bold;
+  border: 1px solid #000;
+  box-shadow: rgba(0, 0, 0, 0.285) -4px -4px 4px inset;
+  padding: 1.5rem;
+  width: 29.5rem;
+  height: 5.6rem;
+}
