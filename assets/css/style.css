@@ -35,7 +35,7 @@ h2 {
   line-height: 120%;
 }
 
-.flex, main .stn-infoCards, main .stn-hero .btn-wrapper, main .btn, header nav, header div {
+.flex, main .stn-infoCards .infoCards-wrapper, main .stn-infoCards, main .stn-hero .btn-wrapper, main .btn, header nav, header div {
   display: flex;
   align-items: center;
 }
@@ -124,8 +124,21 @@ main .stn-infoCards .headline-p {
   width: 60rem;
   text-align: center;
 }
-main .stn-infoCards .cards-wrapper {
+main .stn-infoCards .infoCards-wrapper {
   margin: 6.4rem auto;
+  flex-wrap: wrap;
+}
+main .stn-infoCards .infoCards-wrapper .infoCard {
+  border-radius: 1.5rem;
+  border: 1px solid #000;
+  box-shadow: rgba(0, 0, 0, 0.285) -4px -4px 4px inset;
+  padding: 1.6rem 5.1rem 2.3rem 5.1rem;
+  width: 23rem;
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: 0.4823529412;
 }
 main .stn-infoCards .btn {
   padding-right: 7.8rem;

@@ -105,8 +105,19 @@ main {
       width: 60rem;
       text-align: center;
     }
-    .cards-wrapper {
+    .infoCards-wrapper {
       margin: 6.4rem auto;
+      @extend .flex;
+      flex-wrap: wrap;
+      .infoCard {
+        @include mixin.cardStyle(
+          1.5rem,
+          1.6rem 5.1rem 2.3rem 5.1rem,
+          23rem,
+          28rem
+        );
+        background-color: opacity($color: #ffffff7b);
+      }
     }
     .btn {
       padding-right: 7.8rem;
