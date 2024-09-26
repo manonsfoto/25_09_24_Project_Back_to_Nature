@@ -23,6 +23,7 @@ html {
 
 body {
   max-width: 1440px;
+  min-width: 393px;
   margin: 0 auto;
   font-weight: 400;
   font-size: 1.6rem;
@@ -49,6 +50,21 @@ main .stn-carCards, main .stn-hero .btn-wrapper, main .btn, header nav, header .
 header {
   padding: 1.6rem 16rem;
 }
+@media (max-width: 1169px) {
+  header {
+    padding: 1.6rem 3.2rem;
+  }
+}
+@media (max-width: 834px) {
+  header {
+    padding: 1.6rem 3.2rem;
+  }
+}
+@media (max-width: 560px) {
+  header {
+    padding: 1.6rem;
+  }
+}
 header .header-border {
   padding: 0.8rem;
   border: 1px solid #000;
@@ -61,6 +77,16 @@ header img {
 header nav {
   gap: 4rem;
 }
+@media (max-width: 834px) {
+  header nav {
+    display: none;
+  }
+}
+@media (max-width: 1169px) {
+  header nav {
+    gap: 2rem;
+  }
+}
 header nav a {
   color: #000;
   text-transform: uppercase;
@@ -68,6 +94,18 @@ header nav a {
 header nav a:nth-of-type(1) {
   font-family: "urbanist-black";
   border-bottom: 1px solid #000;
+}
+header .menu-box {
+  display: none;
+}
+@media (max-width: 834px) {
+  header .menu-box {
+    display: flex;
+    padding-right: 1rem;
+  }
+}
+header .menu-box .img-menu {
+  width: 2.4rem;
 }
 
 main .btn {
@@ -95,49 +133,114 @@ main .btn-green {
 }
 main .stn-hero {
   padding: 0 10rem;
-  background: url("../img/Ilustration_Header.png") no-repeat;
+  background: url("../img/hero_img_mit_h1.png") no-repeat;
   background-size: contain;
   background-position: center top;
-  margin: 1.2rem auto;
 }
-main .stn-hero h1 {
-  font-weight: 400;
-  font-size: 11.8rem;
-  line-height: 80%;
-  font-family: "urbanist-black";
-  padding-left: 13.6rem;
-  padding-top: 27.2rem;
+@media (max-width: 834px) {
+  main .stn-hero {
+    padding: 0 4rem;
+  }
+}
+@media (max-width: 560px) {
+  main .stn-hero {
+    padding: 0 2rem;
+  }
 }
 main .stn-hero .btn-wrapper {
   flex-wrap: wrap;
-  padding-top: 8.7rem;
-  padding-bottom: 10rem;
   gap: 2rem;
   justify-content: center;
+  padding-top: 55rem;
+  padding-bottom: 10rem;
+}
+@media (max-width: 1169px) {
+  main .stn-hero .btn-wrapper {
+    padding-top: 45rem;
+    padding-bottom: 3rem;
+  }
+}
+@media (max-width: 834px) {
+  main .stn-hero .btn-wrapper {
+    padding-top: 33rem;
+    padding-bottom: 3rem;
+  }
+}
+@media (max-width: 560px) {
+  main .stn-hero .btn-wrapper {
+    padding-top: 23rem;
+    padding-bottom: 0;
+  }
 }
 main .stn-infoCards,
 main .stn-carCards {
-  padding: 6.4rem 10rem;
   flex-direction: column;
   justify-content: center;
+  padding: 6.4rem 10rem;
+}
+@media (max-width: 1169px) {
+  main .stn-infoCards,
+main .stn-carCards {
+    padding: 0 4.1rem;
+    margin: 6.4rem 0;
+  }
+}
+@media (max-width: 834px) {
+  main .stn-infoCards,
+main .stn-carCards {
+    padding: 0 4.1rem;
+    margin: 6.4rem 0;
+  }
+}
+@media (max-width: 560px) {
+  main .stn-infoCards,
+main .stn-carCards {
+    padding: 0 1.9 rem;
+    margin: 6.4rem 0;
+  }
 }
 main .stn-infoCards h2,
 main .stn-carCards h2 {
   margin-bottom: 1.6rem;
+  text-align: center;
 }
 main .stn-infoCards .headline-p,
 main .stn-carCards .headline-p {
-  width: 60rem;
   text-align: center;
+  width: 60rem;
+}
+@media (max-width: 560px) {
+  main .stn-infoCards .headline-p,
+main .stn-carCards .headline-p {
+    width: 100%;
+  }
 }
 main .stn-infoCards {
   background: url("../img/bulb_info.png") no-repeat center;
   background-size: auto 60%;
   background-position: left;
 }
+@media (max-width: 1169px) {
+  main .stn-infoCards {
+    background: none;
+  }
+}
+@media (max-width: 834px) {
+  main .stn-infoCards {
+    background: none;
+  }
+}
+@media (max-width: 560px) {
+  main .stn-infoCards {
+    background: url("../img/bulb_info_mobile.png") no-repeat center;
+    background-size: contain;
+    background-position: center top;
+  }
+}
 main .stn-infoCards .infoCards-wrapper {
   margin: 6.4rem auto;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 main .stn-infoCards .infoCards-wrapper .infoCard {
@@ -150,8 +253,13 @@ main .stn-infoCards .infoCards-wrapper .infoCard {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #ffffff7b;
   text-align: center;
+  background-color: #ffffff7b;
+}
+@media (max-width: 560px) {
+  main .stn-infoCards .infoCards-wrapper .infoCard {
+    background-color: #fff;
+  }
 }
 main .stn-infoCards .infoCards-wrapper .infoCard img {
   height: 12rem;
@@ -170,14 +278,14 @@ main .stn-infoCards .btn {
 }
 main .stn-carCards {
   background: url("../img/bulb_carCard.png") no-repeat center;
-  background-size: 100%;
+  background-size: contain;
   background-position: center top;
 }
 main .stn-carCards .carCards-wrapper {
   flex-wrap: wrap;
+  justify-content: center;
   gap: 4rem;
   margin-top: 6.4rem;
-  margin-bottom: 9.7rem;
 }
 main .stn-carCards .carCard {
   border-radius: 5rem;
@@ -198,11 +306,10 @@ main .stn-carCards .carCard .img-carCard {
 main .stn-carCards .carCard .carCard-textbox {
   border-top: 1px solid #000;
   background-color: #f0cea0;
-  padding: 1.4rem 2.4rem 1.4rem 3.4rem;
+  padding: 0 2.4rem 1rem 3.4rem;
   flex-direction: column;
   gap: 0.7rem;
   border-radius: 0 0 5rem 5rem;
-  border: 1px solid #000;
   box-shadow: rgba(0, 0, 0, 0.285) -4px -4px 4px inset;
 }
 main .stn-carCards .carCard .btn {
@@ -212,10 +319,13 @@ main .stn-carCards .carCard .carCard-textbox-sub {
   justify-content: space-between;
   width: 100%;
 }
+main .stn-carCards .carCard .carCard-textbox-sub h2 {
+  margin-bottom: 0;
+}
 main .stn-carCards .carCard .carCard-textbox-sub span {
   font-weight: bold;
   font-size: 2rem;
-  line-height: 150%;
+  line-height: 100%;
 }
 main .stn-carCards .carCard article {
   gap: 0.7rem;
@@ -233,6 +343,20 @@ footer nav {
   text-transform: uppercase;
   gap: 5.5rem;
 }
+@media (max-width: 834px) {
+  footer nav {
+    gap: 3.5rem;
+  }
+}
+@media (max-width: 560px) {
+  footer nav {
+    flex-direction: column;
+    row-gap: 0.8rem;
+  }
+}
+footer nav a {
+  color: #000;
+}
 footer .logo_footer {
   margin-top: 2.4rem;
 }
@@ -243,6 +367,9 @@ footer .link-box {
   margin-bottom: 2.4rem;
   font-size: 1rem;
   gap: 1rem;
+}
+footer .link-box a {
+  color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */

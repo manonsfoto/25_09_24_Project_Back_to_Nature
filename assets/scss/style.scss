@@ -28,6 +28,7 @@ html {
 }
 body {
   max-width: 1440px;
+  min-width: 393px;
   margin: 0 auto;
   @include mixin.fontStyle(400, 1.6rem, 120%);
 }
@@ -46,6 +47,15 @@ a {
 // !-----------------header-----------------
 header {
   padding: 1.6rem 16rem;
+  @include mixin.laptop {
+    padding: 1.6rem 3.2rem;
+  }
+  @include mixin.tablet {
+    padding: 1.6rem 3.2rem;
+  }
+  @include mixin.mobile {
+    padding: 1.6rem;
+  }
   .header-border {
     padding: 0.8rem;
     border: 1px solid #000;
@@ -59,6 +69,12 @@ header {
   nav {
     @extend .flex;
     gap: 4rem;
+    @include mixin.tablet {
+      display: none;
+    }
+    @include mixin.laptop {
+      gap: 2rem;
+    }
     a {
       color: #000;
       text-transform: uppercase;
@@ -66,6 +82,16 @@ header {
         font-family: "urbanist-black";
         border-bottom: 1px solid #000;
       }
+    }
+  }
+  .menu-box {
+    display: none;
+    @include mixin.tablet {
+      display: flex;
+      padding-right: 1rem;
+    }
+    .img-menu {
+      width: 2.4rem;
     }
   }
 }
@@ -83,39 +109,66 @@ main {
   //?-----------------Section Hero-----------------
   .stn-hero {
     padding: 0 10rem;
-    background: url("../img/Ilustration_Header.png") no-repeat;
+    @include mixin.tablet {
+      padding: 0 4rem;
+    }
+    @include mixin.mobile {
+      padding: 0 2rem;
+    }
+    background: url("../img/hero_img_mit_h1.png") no-repeat;
     background-size: contain;
     background-position: center top;
-    margin: 1.2rem auto;
 
-    h1 {
-      @include mixin.fontStyle(400, 11.8rem, 80%);
-      font-family: "urbanist-black";
-      padding-left: 13.6rem;
-      padding-top: 27.2rem;
-    }
     .btn-wrapper {
       @extend .flex;
       flex-wrap: wrap;
-      padding-top: 8.7rem;
-      padding-bottom: 10rem;
       gap: 2rem;
       justify-content: center;
+      padding-top: 55rem;
+      padding-bottom: 10rem;
+      @include mixin.laptop {
+        padding-top: 45rem;
+        padding-bottom: 3rem;
+      }
+      @include mixin.tablet {
+        padding-top: 33rem;
+        padding-bottom: 3rem;
+      }
+      @include mixin.mobile {
+        padding-top: 23rem;
+        padding-bottom: 0;
+      }
     }
   }
   //?-----------------Section Info Cards, Car Cards-----------------
   .stn-infoCards,
   .stn-carCards {
-    padding: 6.4rem 10rem;
     @extend .flex;
     flex-direction: column;
     justify-content: center;
+    padding: 6.4rem 10rem;
+    @include mixin.laptop {
+      padding: 0 4.1rem;
+      margin: 6.4rem 0;
+    }
+    @include mixin.tablet {
+      padding: 0 4.1rem;
+      margin: 6.4rem 0;
+    }
+    @include mixin.mobile {
+      padding: 0 1.9 rem;
+      margin: 6.4rem 0;
+    }
     h2 {
       margin-bottom: 1.6rem;
+      text-align: center;
     }
     .headline-p {
-      width: 60rem;
       text-align: center;
+      width: 60rem;
+      @include mixin.mobile {
+        width: 100%;
+      }
     }
   }
   //?-----------------Section Info Cards-----------------
@@ -123,17 +176,32 @@ main {
     background: url("../img/bulb_info.png") no-repeat center;
     background-size: auto 60%;
     background-position: left;
+    @include mixin.laptop {
+      background: none;
+    }
+    @include mixin.tablet {
+      background: none;
+    }
+    @include mixin.mobile {
+      background: url("../img/bulb_info_mobile.png") no-repeat center;
+      background-size: contain;
+      background-position: center top;
+    }
 
     .infoCards-wrapper {
       margin: 6.4rem auto;
       @extend .flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 2rem;
 
       .infoCard {
         @include mixin.cardStyle(1.5rem, 0 5.1rem, 23rem, 28rem);
-        background-color: #ffffff7b;
         text-align: center;
+        background-color: #ffffff7b;
+        @include mixin.mobile {
+          background-color: #fff;
+        }
         img {
           height: 12rem;
         }
@@ -154,15 +222,15 @@ main {
   //?-----------------Section Car Cards-----------------
   .stn-carCards {
     background: url("../img/bulb_carCard.png") no-repeat center;
-    background-size: 100%;
+    background-size: contain;
     background-position: center top;
 
     .carCards-wrapper {
       @extend .flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 4rem;
       margin-top: 6.4rem;
-      margin-bottom: 9.7rem;
     }
     .carCard {
       @include mixin.cardStyle(5rem, 0, 35.3rem, 54.5rem);
@@ -175,12 +243,12 @@ main {
       .carCard-textbox {
         border-top: 1px solid #000;
         background-color: $accentColor-beige;
-        padding: 1.4rem 2.4rem 1.4rem 3.4rem;
+        padding: 0 2.4rem 1rem 3.4rem;
         @extend .flex;
         flex-direction: column;
         gap: 0.7rem;
         border-radius: 0 0 5rem 5rem;
-        border: 1px solid #000;
+
         box-shadow: rgba(0, 0, 0, 0.285) -4px -4px 4px inset;
       }
       .btn {
@@ -191,8 +259,11 @@ main {
         @extend .flex;
         justify-content: space-between;
         width: 100%;
+        h2 {
+          margin-bottom: 0;
+        }
         span {
-          @include mixin.fontStyle(bold, 2rem, 150%);
+          @include mixin.fontStyle(bold, 2rem, 100%);
         }
       }
       article {
@@ -216,6 +287,16 @@ footer {
     text-transform: uppercase;
     @extend .flex;
     gap: 5.5rem;
+    @include mixin.tablet {
+      gap: 3.5rem;
+    }
+    @include mixin.mobile {
+      flex-direction: column;
+      row-gap: 0.8rem;
+    }
+    a {
+      color: #000;
+    }
   }
 
   .logo_footer {
@@ -230,5 +311,8 @@ footer {
     margin-bottom: 2.4rem;
     font-size: 1rem;
     gap: 1rem;
+    a {
+      color: #000;
+    }
   }
 }

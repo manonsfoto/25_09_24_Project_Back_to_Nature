@@ -27,3 +27,20 @@
   flex-direction: column;
   justify-content: center;
 }
+@mixin laptop {
+  @media (max-width: 1169px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 834px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 560px) {
+    @content;
+  }
+}
